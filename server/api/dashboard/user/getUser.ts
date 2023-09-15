@@ -1,4 +1,4 @@
-import { getUser } from "~/utils/api";
+import { getUser } from "~/server/utils/api";
 
 export default eventHandler(async (event) => {
   const token = event.headers.get("Authorization");

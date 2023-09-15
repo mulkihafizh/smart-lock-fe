@@ -1,5 +1,3 @@
-import { getDoorById } from "~/utils/api";
-
 export default eventHandler(async (event) => {
   const id = event.context.params!.id;
   const res = await getDoorById(id);

@@ -1,5 +1,3 @@
-import { login } from "@/utils/api";
-
 export default eventHandler(async (event) => {
   const body = await readBody(event);
   try {
