@@ -1,4 +1,4 @@
-const apiUrl = "https://smart-lock-be.vercel.app/";
+const apiUrl = "https://smart-lock-be.vercel.app";
 export const login = async (params: { username: string; password: string }) => {
   const stringifiedParams = JSON.stringify(params);
   const res = await fetch(apiUrl + "/user/signin", {
