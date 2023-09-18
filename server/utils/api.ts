@@ -1,3 +1,5 @@
+const config = useRuntimeConfig();
+const apiUrl = config.apiUrl;
 export const login = async (params: { username: string; password: string }) => {
   const stringifiedParams = JSON.stringify(params);
   const res = await fetch("http://localhost:8000/api/user/signin", {
@@ -12,7 +14,7 @@ export const login = async (params: { username: string; password: string }) => {
 };
 
 export const getUser = async (token: string) => {
-  const res = await fetch("http://localhost:8000/api/user/getUser", {
+  const res = await fetch(apiUrl + "/user/getUser", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -24,7 +26,7 @@ export const getUser = async (token: string) => {
 };
 
 export const getDoor = async () => {
-  const res = await fetch("http://localhost:8000/api/door/get", {
+  const res = await fetch(apiUrl + "/door/get", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -36,7 +38,7 @@ export const getDoor = async () => {
 };
 
 export const getDoorById = async (id: string) => {
-  const res = await fetch(`http://localhost:8000/api/door/get/${id}`, {
+  const res = await fetch(`${apiUrl}/door/get/${id}`, {
     method: "GET",
     credentials: "include",
     headers: {
@@ -48,7 +50,7 @@ export const getDoorById = async (id: string) => {
 };
 
 export const getHistoryById = async (id: string) => {
-  const res = await fetch(`http://localhost:8000/api/history/get/${id}`, {
+  const res = await fetch(`${apiUrl}/history/get/${id}`, {
     method: "GET",
     credentials: "include",
     headers: {
