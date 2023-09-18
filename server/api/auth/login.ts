@@ -11,6 +11,6 @@ export default eventHandler(async (event) => {
     setCookie(event, "token", data.token);
     return new Response(JSON.stringify(data), { status: 200 });
   } catch (e: any) {
-    return new Response(e, { status: 500 });
+    return new Response(JSON.stringify(e), { status: 500 });
   }
 });
